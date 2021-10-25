@@ -1,13 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
-public class LightIntensitySampleAndHold : MonoBehaviour
+public class PeriodicEventTrigger : MonoBehaviour
 {
-    public new Light light;
-    public AnimationCurve intensityCurve;
-    public float startIntensity = 1f;
     public float startPeriod = 1f;
     public float startChance = 0.5f;
     public float startPeriodDrift = 0.5f;
+    public UnityEvent onTrigger;
 
     public float period { get; set; }
     public float chance { get; set; }
@@ -18,7 +17,6 @@ public class LightIntensitySampleAndHold : MonoBehaviour
 
     private void Awake()
     {
-        light.intensity = startIntensity;
         period = startPeriod;
         chance = startChance;
         periodDrift = startPeriodDrift;
@@ -34,7 +32,7 @@ public class LightIntensitySampleAndHold : MonoBehaviour
             ResetPeriod();
             if (Random.value < chance)
             {
-                light.intensity = intensityCurve.Evaluate(Random.value);
+                onTrigger.Invoke();
             }
         }
     }
