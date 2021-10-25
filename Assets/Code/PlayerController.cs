@@ -37,10 +37,7 @@ public class PlayerController : MonoBehaviour
         lookCamera = GetComponentInChildren<Camera>();
         
         capsuleMeshRenderer.enabled = false;
-    }
 
-    private void Start()
-    {
         if (startLocation != null)
         {
             transform.position = startLocation.position;
