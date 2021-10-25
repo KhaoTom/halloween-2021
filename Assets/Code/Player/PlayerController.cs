@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public bool startCanMove = true;
     public Transform startLocation;
     public UnityEvent<GameObject> onInteraction;
+    public UnityEvent<float> onMoveInput;
     public bool canMove { get; set; }
 
     private Camera lookCamera;
@@ -98,6 +99,10 @@ public class PlayerController : MonoBehaviour
 
         var moveInput = new Vector2(Input.GetAxis("Horizontal") * Time.deltaTime, Input.GetAxis("Vertical") * Time.deltaTime) * moveSpeed;
         var move = transform.right * moveInput.x + transform.forward * moveInput.y;
+        if (move != Vector3.zero)
+        {
+            onMoveInput.Invoke(Time.deltaTime);
+        }
         characterController.Move(move);
     }
 
