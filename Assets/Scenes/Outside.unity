@@ -23225,7 +23225,7 @@ AudioSource:
   m_GameObject: {fileID: 395235100}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2875766865510333519, guid: a9fd7178e11ead64796748c0233ba647, type: 2}
   m_audioClip: {fileID: 8300000, guid: b81cacae2e4edaf4d875de7603c3d280, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.165
@@ -23863,6 +23863,190 @@ MonoBehaviour:
   onWarpTime:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &562579511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 562579512}
+  - component: {fileID: 562579514}
+  - component: {fileID: 562579513}
+  - component: {fileID: 562579515}
+  - component: {fileID: 562579517}
+  m_Layer: 0
+  m_Name: PumpkinEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &562579512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562579511}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1568511975}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &562579513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562579511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e81ed3a92a2384696369fc4c03947d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {fileID: 1631432465}
+  maxDistance: 3
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  tags:
+  - Pumpkin
+  onRaycastHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 562579515}
+        m_TargetAssemblyTypeName: PulseEventTrigger, Assembly-CSharp
+        m_MethodName: StartPulse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &562579514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562579511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3913f7dd76cb1a64989510d95a763458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPeriod: 0.2
+  startChance: 1.1
+  startPeriodDrift: 0.5
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 562579513}
+        m_TargetAssemblyTypeName: OnRaycastHitEventTrigger, Assembly-CSharp
+        m_MethodName: PerformRaycast
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &562579515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562579511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6679725de8320e8409827d2d5091692f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDuration: 1
+  playOnAwake: 0
+  onPulseStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onPulseEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  onPulseTime:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 562579517}
+        m_TargetAssemblyTypeName: CurveValues, Assembly-CSharp
+        m_MethodName: Evaluate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &562579517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562579511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad69ada9e7f4244a8cbf9a7eb33011d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  values:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 3.8458126
+      outSlope: 3.8458126
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.03147208
+    - serializedVersion: 3
+      time: 1.0000143
+      value: -0.005039215
+      inSlope: -4.125711
+      outSlope: -4.125711
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.02842636
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  onNewValue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1250407662}
+        m_TargetAssemblyTypeName: PostProcessAdjustments, Assembly-CSharp
+        m_MethodName: SetLensDistortion
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &581523053
 GameObject:
   m_ObjectHideFlags: 0
@@ -66876,6 +67060,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1250407661}
   - component: {fileID: 1250407660}
+  - component: {fileID: 1250407662}
   m_Layer: 0
   m_Name: Global Volume
   m_TagString: Untagged
@@ -66914,6 +67099,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1250407662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250407659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71cb60b7494547944b909361c8b85661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: {fileID: 1250407660}
 --- !u!1 &1276787246
 GameObject:
   m_ObjectHideFlags: 0
@@ -68741,7 +68939,7 @@ GameObject:
   - component: {fileID: 1568511971}
   m_Layer: 0
   m_Name: Pumpkin
-  m_TagString: Untagged
+  m_TagString: Pumpkin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -82183,7 +82381,8 @@ Transform:
   m_LocalRotation: {x: -0, y: 0.29848978, z: -0, w: 0.9544129}
   m_LocalPosition: {x: 28.12961, y: 0.77156115, z: 22.996376}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 562579512}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 34.734, z: 0}
@@ -83131,6 +83330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1703693342}
+  - component: {fileID: 1703693341}
   m_Layer: 0
   m_Name: PlayerStart
   m_TagString: Untagged
@@ -83138,6 +83338,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1703693341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703693340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e23bc3597f1709439843713e14b993f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 561382782}
+        m_TargetAssemblyTypeName: TransformWarper, Assembly-CSharp
+        m_MethodName: set_target
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1703693342}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1703693342
 Transform:
   m_ObjectHideFlags: 0

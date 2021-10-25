@@ -13,4 +13,9 @@ public class CurveValues : MonoBehaviour
     {
         onNewValue.Invoke(values.Evaluate(Random.value));
     }
+
+    public void Evaluate(float time)
+    {
+        onNewValue.Invoke(values.Evaluate(time));
+    }
 }
