@@ -22174,7 +22174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaId: 0
   mixerGroup: {fileID: 4504425692300655612, guid: a9fd7178e11ead64796748c0233ba647, type: 2}
-  basevolume: 0.1
+  basevolume: 0.05
   rootOffset: 0
   startBeatDelay: 40
   maxVoices: 1
@@ -66180,7 +66180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb3b2a9011eba504da052ed12180f4a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultBpm: 180
+  defaultBpm: 140
   defaultScale: 5
   defaultRootNote: 69
   delaySecondsBeforeFirstBeat: 1
@@ -69877,7 +69877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaId: 0
   mixerGroup: {fileID: 4504425692300655612, guid: a9fd7178e11ead64796748c0233ba647, type: 2}
-  basevolume: 0.4
+  basevolume: 0.2
   rootOffset: 0
   startBeatDelay: 32
   maxVoices: 1
