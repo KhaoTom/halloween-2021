@@ -17,6 +17,19 @@ namespace KhaoTom.Timeline
         {
             playableDirector.EvaluateBackward(deltaTime);
         }
-    }
 
+        public void PlayByRatio(float ratio)
+        {
+            Debug.Log(ratio);
+            var deltaTime = (float)playableDirector.duration * ratio;
+            if (deltaTime < 0f)
+            {
+                playableDirector.EvaluateBackward(Mathf.Abs(deltaTime));
+            }
+            else
+            {
+                playableDirector.Evaluate(deltaTime);
+            }
+        }
+    }
 }
