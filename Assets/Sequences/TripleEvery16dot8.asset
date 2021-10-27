@@ -23,5 +23,5 @@ MonoBehaviour:
     volume: 1
   - interval: 1
     volume: 0.8
-  - interval: 6
+  - interval: 30
     volume: 0.6
